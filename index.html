@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de registro de ventas</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/52056e0434.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+
+<!-- VENTAS POR SUCURSAL  -->        
+        <div class="container-reports">
+            <div class="report-section">
+               <div class="title">
+                   <p>Ventas por sucursal</p>
+                </div>
+               <div class="report" id="report-office">
+                     <table class="report-table">
+                         <tr>
+                             <th>Sucursal</th>
+                             <th>Total Ventas</th>
+                         </tr>
+                         <tr>
+                             <td>Centro</td>
+                             <td>0</td>
+                         </tr>
+                         <tr>
+                             <td>Caballito</td>
+                             <td>0</td>
+                         </tr>
+                     </table>
+               </div>
+            </div>
+
+<!-- REPORTES  --> 
+            <div class="report-section">
+               <div class="title">
+                   <p>Reportes</p>
+                </div>
+               <div class="report" id="report-general">
+                       <div class="product">Producto estrella: <strong>Monitor GPRS 3000</strong></div>
+                       <div class="saleswoman">Vendedora que más ingresos generó: <strong>Grace</strong></div>
+               </div>
+            </div>
+        </div>
+
+<!-- TABLA DE VENTAS  --> 
+        <div class="container-sales">
+            <div class="title sales">
+                <p>Ventas</p>
+                <button class="new-sale" id="add"><i class="fas fa-plus-circle"></i> Nueva venta</button>
+            </div>
+            <div class="report" id="report-sales">
+                <table class="report-table" id="table">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Vendedora</th>
+                        <th>Sucursal</th>
+                        <th>Componentes</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- M O D A L E S  --> 
+    <div class="modal-container-add">
+        <div class="modal-content-add">
+            <div class="title modal-header">
+                <p>Agregar Venta</p>
+            </div>
+            <div class="report form" id="">
+                <form action="" id="form-add">
+                    <label for="salesWoman">Vendedora</label><br>
+                    <select id="salesWoman" name="salesWoman">
+                        <option value=" " selected></option>
+                        <option value="Ada">Ada</option>
+                        <option value="Grace">Grace</option>
+                        <option value="Hedy">Hedy</option>
+                        <option value="Sheryl">Sheryl</option>
+                    </select><br>
+                    <label for="">Componentes</label><br>
+                    <select class="components" id="components" name="" size="4">
+                        <option value="Monitor GPRS 3000">Monitor GPRS 3000</option>
+                        <option value="Motherboard ASUS 1200">Motherboard ASUS 1200</option>
+                        <option value="Monitor ASC 543">Monitor ASC 543</option>
+                        <option value="Motherboard ASUS 1200">Motherboard ASUS 1200</option>
+                        <option value="Motherboard MZI">Motherboard MZI</option>
+                        <option value="HDD Toyiva">HDD Toyiva</option>
+                        <option value="HDD Wezter Dishital">HDD Wezter Dishital</option>
+                        <option value="RAM Quinston">RAM Quinston</option>
+                        <option value="RAM Quinston Fury">RAM Quinston Fury</option> 
+                    </select><br>
+                    <label for="store">Sucursal</label><br>
+                    <select id="store" name="store">
+                        <option value=""></option>
+                        <option value="Centro">Centro</option>
+                        <option value="Caballito">Caballito</option>
+                    </select><br>
+                    <label for="">Fecha</label><br>
+                    <input type="date" name="" id="date">
+                </form>     
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel" id="cancel">Cancelar</button>
+                <input type="submit" value="Guardar" id="addSave" class="btn save">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-container-edit d-none">
+        <div class="modal-content-edit">
+            <div class="title modal-header">
+                <p>Editar Venta</p>
+            </div>
+            <div class="report form" id="">
+                <form action="">
+                    <label for="salesWoman">Vendedora</label><br>
+                    <select id="salesWoman" name="salesWoman">
+                        <option value="ada">Ada</option>
+                        <option value="grace">Grace</option>
+                    </select><br>
+                    <label for="">Componentes</label><br>
+                    <select class="components" id="" name="" size="4">
+                        <option value="gprs3000">Monitor GPRS 3000</option>
+                        <option value="asus1200">Motherboard ASUS 1200</option>
+                        <option value="fiat">Monitor ASC 543</option>
+                        <option value="audi">Motherboard ASUS 1200</option>
+                        <option value="audi">Motherboard MZI</option>
+                        <option value="audi">HDD Toyiva</option>
+                        <option value="audi">HDD Wezter Dishital</option>
+                        <option value="audi">RAM Quinston</option>
+                        <option value="audi">RAM Quinston Fury</option> 
+                    </select><br>
+                    <label for="saleswoman">Sucursal</label><br>
+                    <select id="saleswoman" name="saleswoman">
+                        <option value="ada">Centro</option>
+                        <option value="grace">Caballito</option>
+                    </select><br>
+                    <label for="">Fecha</label><br>
+                    <input type="date" name="" id="">
+                </form>     
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel" id="cancel">Cancelar</button>
+                <button class="btn save" id="save">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+        <div class="modal-container-delete d-none">
+        <div class="modal-content-delete">
+            <div class="title modal-header">
+                <p>Eliminar Venta</p>
+            </div>
+            <div class="content-delete">
+                <h3>¿Estás segura?</h3>
+                <p>Esta acción no se puede revertir.</p> 
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel" id="cancel">Cancelar</button>
+                <button class="btn delete" id="delete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="./js/main.js"></script>
+</body>
+</html>
